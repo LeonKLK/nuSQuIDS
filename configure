@@ -652,10 +652,10 @@ if [ $PYTHON_BINDINGS ]; then
 		if [ -d "$BOOST_INCDIR" \
 		  -a -d "$BOOST_LIBDIR" \
 		  -a -e "$BOOST_INCDIR/boost/python.hpp" \
-		  -a -e "$BOOST_LIBDIR/libboost_python$PYTHONVERSIONSIMPLE.a" ]; then
+		  -a -e "$BOOST_LIBDIR/libboost_python3.a" ]; then
 			BOOST_FOUND=1
 			BOOST_CFLAGS="-I$BOOST_INCDIR"
-			BOOST_LDFLAGS="-Wl,-rpath -Wl,${BOOST_LIBDIR} -L$BOOST_LIBDIR -lboost_python$PYTHONVERSIONSIMPLE"
+			BOOST_LDFLAGS="-Wl,-rpath -Wl,${BOOST_LIBDIR} -L$BOOST_LIBDIR -lboost_python3"
 		else
 			echo "Warning: manually specifed boost not found; will attempt auto detection"
 		fi
