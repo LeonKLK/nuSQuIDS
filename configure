@@ -119,11 +119,11 @@ try_find_boost(){
 	POSSIBLE_BOOST_LIBDIRS="${GUESS_DIR}/lib ${GUESS_DIR}/lib64 ${GUESS_DIR}/lib/x86_64-linux-gnu"
 	POSSIBLE_BOOST_INCDIRS="${GUESS_DIR}/include"
 	for BOOST_LIBDIR in $POSSIBLE_BOOST_LIBDIRS; do
-		if [ -d $BOOST_LIBDIR -a \( -e $BOOST_LIBDIR/libboost_python${PYV}.a -o -e $BOOST_LIBDIR/libboost_python${PYV}.so -o -e $BOOST_LIBDIR/libboost_python${PYV}.dylib \) ]; then
+		if [ -d $BOOST_LIBDIR -a \( -e $BOOST_LIBDIR/libboost_python3.a -o -e $BOOST_LIBDIR/libboost_python3.so -o -e $BOOST_LIBDIR/libboost_python3.dylib \) ]; then
 			break
 		fi
 	done
-	if [ ! -d $BOOST_LIBDIR -o ! \( -e $BOOST_LIBDIR/libboost_python${PYV}.a -o -e $BOOST_LIBDIR/libboost_python${PYV}.so -o -e $BOOST_LIBDIR/libboost_python${PYV}.dylib \) ]; then
+	if [ ! -d $BOOST_LIBDIR -o ! \( -e $BOOST_LIBDIR/libboost_python3.a -o -e $BOOST_LIBDIR/libboost_python3.so -o -e $BOOST_LIBDIR/libboost_python3.dylib \) ]; then
 		echo " Unable to locate the boost_python${PYV} libray in $GUESS_DIR"
 		return
 	fi
